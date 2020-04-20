@@ -1,0 +1,986 @@
+{
+	"info": {
+		"_postman_id": "8d4d3991-f170-4aeb-9c67-a408652fc57a",
+		"name": "Coinrui API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "钱包接口",
+			"item": [
+				{
+					"name": "获取所有币信息",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/wallet/getall_coininfo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"wallet",
+								"getall_coininfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询资产快照",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/wallet/assets_snapshot?startTime&endTime&limit=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"wallet",
+								"assets_snapshot"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": null
+								},
+								{
+									"key": "endTime",
+									"value": null
+								},
+								{
+									"key": "limit",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "提币",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/wallet/extract?address=0x74e04b0d67e5d260411726fd27a05dcdd9b331b8&coin=ETH&network=0&amount=10&addressTag=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"wallet",
+								"extract"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "0x74e04b0d67e5d260411726fd27a05dcdd9b331b8"
+								},
+								{
+									"key": "coin",
+									"value": "ETH"
+								},
+								{
+									"key": "network",
+									"value": "0"
+								},
+								{
+									"key": "amount",
+									"value": "10"
+								},
+								{
+									"key": "addressTag",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取充值历史",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"type": "text",
+								"value": "{{API_KEY}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/wallet/charge/history/list?startTime=&endTime=&coin=BTC",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"wallet",
+								"charge",
+								"history",
+								"list"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": ""
+								},
+								{
+									"key": "endTime",
+									"value": ""
+								},
+								{
+									"key": "coin",
+									"value": "BTC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取提币历史",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/wallet/extract/history/list?coin=BTC&status=2&offset=0&limit=100&startTime=&endTime=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"wallet",
+								"extract",
+								"history",
+								"list"
+							],
+							"query": [
+								{
+									"key": "coin",
+									"value": "BTC"
+								},
+								{
+									"key": "status",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "startTime",
+									"value": ""
+								},
+								{
+									"key": "endTime",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取充值地址",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/wallet/address?coin=ETH",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"wallet",
+								"address"
+							],
+							"query": [
+								{
+									"key": "coin",
+									"value": "ETH"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "账户状态",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"type": "text",
+								"value": "{{API_KEY}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/manage/account/status",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"manage",
+								"account",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "交易手续费查询",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"type": "text",
+								"value": "{{API_KEY}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market//coinpair/trade/fee",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"",
+								"coinpair",
+								"trade",
+								"fee"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "行情接口",
+			"item": [
+				{
+					"name": "测试服务器连通性",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/server_connected",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"server_connected"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取服务器时间",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/server_time",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"server_time"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "交易规范信息",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/transaction_specification",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"transaction_specification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "深度信息",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/depth_info?symbol=XRP_USDT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"depth_info"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "XRP_USDT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "近期成交列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/recently_markets?coinCode=BTC&limit=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"recently_markets"
+							],
+							"query": [
+								{
+									"key": "coinCode",
+									"value": "BTC"
+								},
+								{
+									"key": "limit",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询历史成交",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/history_markets?coinCode=BTC&limit=10&orderInfoId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"history_markets"
+							],
+							"query": [
+								{
+									"key": "coinCode",
+									"value": "BTC"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "orderInfoId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "K线数据",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/kline/klines?symbol=BTC_USDT&period=1min&startTime=1581480000000&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"kline",
+								"klines"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "BTC_USDT"
+								},
+								{
+									"key": "period",
+									"value": "1min"
+								},
+								{
+									"key": "startTime",
+									"value": "1581480000000"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "当前平均价格",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/average_price?symbol=XRP_USDT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"average_price"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "XRP_USDT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "24hr 价格变动情况",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/day_price?symbol=XRP_USDT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"day_price"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "XRP_USDT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "最新价格",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/new_price?symbol=XRP_USDT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"new_price"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "XRP_USDT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "当前最优挂单",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/market/optimal_order?symbol=XRP_USDT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"market",
+								"optimal_order"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "XRP_USDT"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "现货账户与交易接口",
+			"item": [
+				{
+					"name": "下单",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "symbol",
+									"value": "TMD_USDT",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "entrustWay",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "entrustPrice",
+									"value": "0.08",
+									"type": "text"
+								},
+								{
+									"key": "entrustCount",
+									"value": "60",
+									"type": "text"
+								},
+								{
+									"key": "newClientOrderId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "stopPrice",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "newOrderRespType",
+									"value": "",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/entrust/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"entrust",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "撤销订单",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/v1/entrust/order?symbol=TMD_USDT&clientOrderId=LO2020041917153278287",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"entrust",
+								"order"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "TMD_USDT"
+								},
+								{
+									"key": "clientOrderId",
+									"value": "LO2020041917153278287"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询订单",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/entrust/order?symbol=EOS_ETH&clientOrderId=LO2020041219522175264",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"entrust",
+								"order"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "EOS_ETH"
+								},
+								{
+									"key": "clientOrderId",
+									"value": "LO2020041219522175264"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "当前挂单",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/entrust/open_order?symbol=TMD_USDT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"entrust",
+								"open_order"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "TMD_USDT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询所有订单",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/entrust/all?symbol=TMD_USDT&limit=10&startTime=1583230721000&endTime=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"entrust",
+								"all"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "TMD_USDT"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "startTime",
+									"value": "1583230721000"
+								},
+								{
+									"key": "endTime",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "账户信息",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/account/balances",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"account",
+								"balances"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "账户历史成交",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/entrust/history?limit=10&startTime=1583230721000&endTime=&symbol=TMD_USDT&fromId=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"entrust",
+								"history"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "startTime",
+									"value": "1583230721000"
+								},
+								{
+									"key": "endTime",
+									"value": ""
+								},
+								{
+									"key": "symbol",
+									"value": "TMD_USDT"
+								},
+								{
+									"key": "fromId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "生成listenKey",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-HX-APIKEY",
+								"value": "{{API_KEY}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/v1/account/listen_key",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"account",
+								"listen_key"
+							]
+						},
+						"description": "GET：生成 \nPUT：延长有效期\nDELETE：删除"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
